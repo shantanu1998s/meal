@@ -3,9 +3,14 @@ const card = document.getElementById("meals");
 const recipe = document.getElementById("recepi")
 const btn = document.getElementById("mealsbtn")
 const calories = document.querySelectorAll(".calories")
+const ingre=document.getElementById("ingredients-tab");
+const step=document.getElementById("step-tab");
+const equ=document.getElementById("equipment-tab");
+  ingre.style.color='#ee634e';
+  step.style.color='#ee634e';
+  equ.style.color='#ee634e';
 var calorie;
 var breakfastId, lunchId, dinnerId;
-
 btn.addEventListener("click", calorieCal)
 
 function calorieCal(e) {
@@ -19,32 +24,32 @@ function calorieCal(e) {
   
     if(height!="" || weight!="" || age!="")
     {
-    if (gender === "male") {
+      if (gender === "male") {
         bmr = 66.47 + (13.75 * weight) + (5.003 * height) - (6.755 * age)
-    }
-    else if (gender === "female"){
+      }
+      else if (gender === "female"){
         bmr = 655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age)
-    }
-    else
-    return;
-    if (activity === "light") {
+      }
+      else
+      return;
+      if (activity === "light") {
         calorie = bmr * 1.375;
-    }
-    else if (activity === "moderate") {
+      }
+      else if (activity === "moderate") {
         calorie = bmr * 1.55;
-    }
-    else if(activity === "active"){
+      }
+      else if(activity === "active"){
         calorie = bmr * 1.725;
-    }
-    else
-    return;
-    console.log(bmr, calorie);
-    getMealData();
-  /*  setTimeout(() => {
+      }
+      else
+      return;
+      console.log(bmr, calorie);
+      getMealData();
+       /*  setTimeout(() => {
         card.style.display = "block";
-    }, 3000);
-    */
-}
+       }, 3000);
+       */
+  }
 }
 
 function getMealData() {
